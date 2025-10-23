@@ -2,8 +2,6 @@
 unzip -o "$ZIPFILE" AdAway.apk -d $TMPDIR >&2 || { echo "解压模块失败！"; exit 1; }
 
 MODDIR=$TMPDIR
-echo "MODDIR=$MODDIR"
-ls -l $MODDIR
 PKG="org.adaway"
 
 # 检查用户是否已经安装
@@ -18,5 +16,4 @@ fi
 echo "正在安装 AdAway"
 pm install --user 0 $MODDIR/AdAway.apk
 rm $MODDIR/AdAway.apk
-ls -l $MODDIR
 echo "安装完成,请重启手机使用"
