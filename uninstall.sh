@@ -1,1 +1,3 @@
 # 这个脚本会在删除模块的时候执行
+AdAwayApp="org.adaway"
+pm uninstall $AdAwayApp

@@ -1,7 +1,7 @@
 # id 只能填 字母 数字 半角符号
-id=template
-name=模块模板
+id=adAwayHost
+name=adAwayHost
 version=v1
 versionCode=1
-author=Pinkdoge
-description=一个简短的描述
+author=@酷安/酷宓小編
+description=让adAway能正常修改Hosts文件

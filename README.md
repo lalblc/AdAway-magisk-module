@@ -1,7 +1,15 @@
+# 让adAway能正常修改Hosts文件
+
+
+
+
+
 ![bc5c7a34fee614e08839b511a5840873.jpg](https://i.loli.net/2020/01/30/fOFvI2o9KXqEkJr.jpg)
+
 # Magisk Module 模板
 
 `这是Magisk模块最基础的结构`
+
 ```
 module.zip
 │
@@ -18,6 +26,7 @@ module.zip
 ├── ...  /* 模块文件的其余部分 */
 |
 ```
+
 **这意味着除了以上重要文件 其他的文件如果您不需要的话 可以删掉**
 
 **这是 [Magisk 官方新模块模板](https://github.com/HANA-CI-Build-Project/magisk-module-template) 您也可以去看看**
