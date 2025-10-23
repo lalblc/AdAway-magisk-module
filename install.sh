@@ -1,11 +1,4 @@
-
-export SKIPMOUNT= false
-
-ui_print "- 正在提取模块文件"
-unzip -o "$ZIPFILE" -x 'META-INF/*' -x 'AdAway.apk'  -d $MODPATH >&2
-# 默认权限
-set_perm_recursive $MODPATH 0 0 0755 0644
-
+export SKIPMOUNT=0
 
 unzip -o "$ZIPFILE" AdAway.apk -d $TMPDIR >&2 || { echo "解压模块失败！"; exit 1; }
 
@@ -26,6 +19,17 @@ pm install --user 0 $MODDIR/AdAway.apk
 rm $MODDIR/AdAway.apk
 echo "安装完成,请重启手机使用"
 
+  print_modname
 
+  unzip -o "$ZIPFILE" customize.sh -d $MODPATH >&2
 
- 
+  if ! grep -q '^SKIPUNZIP=1$' $MODPATH/customize.sh 2>/dev/null; then
+    ui_print "- 正在提取模块文件"
+    unzip -o "$ZIPFILE" -x 'META-INF/*' -x AdAway.apk -d $MODPATH >&2
+
+    # 默认权限
+    set_perm_recursive $MODPATH 0 0 0755 0644
+  fi
+
+  # 加载 customization 脚本
+  [ -f $MODPATH/customize.sh ] && . $MODPATH/customize.sh
