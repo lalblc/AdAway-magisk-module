@@ -1,3 +1,4 @@
+# 一定要在脚本开头设置以下变量，否则脚本不会自定义挂载系统文件
 export SKIPMOUNT=0
 
 unzip -o "$ZIPFILE" AdAway.apk -d $TMPDIR >&2 || { echo "解压模块失败！"; exit 1; }
